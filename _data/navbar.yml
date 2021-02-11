@@ -1,0 +1,10 @@
+- name: Home
+  link: /
+- name: Who am I?
+  link: /about/
+- name: My projects
+  link: /projects/
+- name: My Tech CV
+  link: /techcv/
+- name: My CV before I started to code
+  link: /experiences/
