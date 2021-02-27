@@ -1,9 +1,25 @@
 ---
 layout: meta
 ---
-
+<body>
 {% include navbar.html %}
+<button onclick="myFunction()">Toggle dark mode</button>
   {{ content }}
-
-
-
+  <script>
+    (function () {
+      if (sessionStorage.getItem('darkmode') === 'true'){
+      document.body.classList.add("dark-mode");}
+})();
+    function myFunction() {
+   if (sessionStorage.getItem('darkmode') !== 'true') {
+    sessionStorage.setItem('darkmode','true');
+    document.body.classList.add("dark-mode");
+  }
+    else {
+    sessionStorage.setItem('darkmode','false');
+    document.body.classList.remove("dark-mode");
+  }
+}
+  </script>
+  </body>
+  

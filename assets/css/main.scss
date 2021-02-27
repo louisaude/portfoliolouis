@@ -3,3 +3,9 @@
 @import "bootstrap/bootstrap.scss";
 @import "body.scss";
 @import "fonts.scss";
+@import "buttons.scss";
+@import "containers.scss";
+
+.navbar-nav {
+  margin: 0 auto;
+}
