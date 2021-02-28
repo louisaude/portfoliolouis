@@ -3,25 +3,25 @@ layout: meta
 ---
 <body>
 {% include navbar.html %}
-<label class="switch">
-  <input type="checkbox" id="dmcheckbox" onclick="myFunction()">
-  <span class="slider"></span>
-</label>
-
   {{ content }}
   <script>
     (function () {
-      if (sessionStorage.getItem('darkmode') === 'true'){
+      console.log(sessionStorage.getItem('darkmode'))
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && sessionStorage.getItem('darkmode') === null ) {
       document.body.classList.add("dark-mode");
       document.getElementById("dmcheckbox").checked = false;
-    }
-    else  {
+      }
+      else if (sessionStorage.getItem('darkmode') === 'true'){
+      document.body.classList.add("dark-mode");
+      document.getElementById("dmcheckbox").checked = false;
+      }
+      else if (sessionStorage.getItem('darkmode') === 'false') {
       document.body.classList.remove("dark-mode");
       document.getElementById("dmcheckbox").checked = true;
        }
 })();
     function myFunction() {
-   if (sessionStorage.getItem('darkmode') !== 'true') {
+   if (sessionStorage.getItem('darkmode') === 'false') {
     sessionStorage.setItem('darkmode','true');
     document.body.classList.add("dark-mode");
   }
