@@ -6,10 +6,15 @@ layout: meta
   {{ content }}
   <script>
     (function () {
-      console.log(sessionStorage.getItem('darkmode'))
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && sessionStorage.getItem('darkmode') === null ) {
       document.body.classList.add("dark-mode");
       document.getElementById("dmcheckbox").checked = false;
+      sessionStorage.setItem('darkmode','true')
+      }
+      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches && sessionStorage.getItem('darkmode') === null ) {
+      document.body.classList.remove("dark-mode");
+      document.getElementById("dmcheckbox").checked = true;
+      sessionStorage.setItem('darkmode','falseç')
       }
       else if (sessionStorage.getItem('darkmode') === 'true'){
       document.body.classList.add("dark-mode");
@@ -19,17 +24,18 @@ layout: meta
       document.body.classList.remove("dark-mode");
       document.getElementById("dmcheckbox").checked = true;
        }
-})();
+    })();
     function myFunction() {
-   if (sessionStorage.getItem('darkmode') === 'false') {
+    console.log(sessionStorage.getItem('darkmode'))
+    if (sessionStorage.getItem('darkmode') === 'false') {
     sessionStorage.setItem('darkmode','true');
     document.body.classList.add("dark-mode");
-  }
+    }
     else {
     sessionStorage.setItem('darkmode','false');
     document.body.classList.remove("dark-mode");
+    }
   }
-}
   </script>
   </body>
   

@@ -9,9 +9,16 @@ font-family: 'Titillium Web', sans-serif;
   font-weight: 200;
   text-align: justify;
   text-justify: inter-word;
-  text-align: center;
+  text-align: start;
   h1{
     font-weight: 600;
+  }
+  p{
+  text-align: justify;
+  }
+  a{
+  text-align: start;
+  justify-content: start;
   }
 }
 .dark-mode {

@@ -19,7 +19,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: rgb(52, 52, 58);
   -webkit-transition: .4s;
   transition: .4s;
   background-image: url("../moon.png");
@@ -39,7 +39,7 @@
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #4084bb;
   background-image: url("../sun.png");
   background-repeat: no-repeat;
   background-position: left 8% bottom 50%;

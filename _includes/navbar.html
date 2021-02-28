@@ -1,13 +1,15 @@
 
 <nav class="navbar navbar-expand-lg">
-    <div class="navbar-nav">
+    <div id="barrenav" class="container">
       {% for item in site.data.navbar %}
       <a class="button-navbar" href="{{item.link}}">{{item.name}}</a>
       {% endfor %}
-      <label class="switch">
-        <input type="checkbox" id="dmcheckbox" onclick="myFunction()">
-        <span class="slider"></span>
-      </label>
+      <div class="dmbutton">
+        <label class="switch">
+          <input type="checkbox" id="dmcheckbox" onclick="myFunction()">
+          <span class="slider"></span>
+        </label>
+      </div>
     </div>
 </nav>
 
