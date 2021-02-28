@@ -3,12 +3,22 @@ layout: meta
 ---
 <body>
 {% include navbar.html %}
-<button onclick="myFunction()">Toggle dark mode</button>
+<label class="switch">
+  <input type="checkbox" id="dmcheckbox" onclick="myFunction()">
+  <span class="slider"></span>
+</label>
+
   {{ content }}
   <script>
     (function () {
       if (sessionStorage.getItem('darkmode') === 'true'){
-      document.body.classList.add("dark-mode");}
+      document.body.classList.add("dark-mode");
+      document.getElementById("dmcheckbox").checked = false;
+    }
+    else  {
+      document.body.classList.remove("dark-mode");
+      document.getElementById("dmcheckbox").checked = true;
+       }
 })();
     function myFunction() {
    if (sessionStorage.getItem('darkmode') !== 'true') {
