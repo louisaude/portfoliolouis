@@ -1,0 +1,23 @@
+.projectbox {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .projectpic {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      img{
+        height: 40vh;
+      }
+    }
+    
+
+    .projecttext{
+      display: flex;
+      flex-direction:column;
+      justify-content: center;
+      padding: 3vh;
+    }
+  }
