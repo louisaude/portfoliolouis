@@ -1,95 +1,35 @@
 .projectbox {
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
 
-    .projectpic {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 40vw;
-	    height: 40vh;
-	    border-radius: 15px;
-	    padding: 1.5rem;
-	    background: white;
-	    position: relative;
-      top: 30vh;
-      align-items: center;
-	    transition: 0.4s ease-out;
-	    box-shadow: 0px 7px 10px rgba(black, 0.5);
-	    &:hover{
-		    transform: translateY(-20px);
-        &:before {
-			  opacity: 1;
-      }
+
+  .projectpic {
+    width: 40vh;
+    height:40vh;
+    transition: 0.4s ease-out;
+    &:hover {
+      transform: translateY(-20px);
+        &::before {
+          opacity: 1;
+        }
         .cardtext {
           opacity: 1;
           transform: translate(0px);
         }
-    &:before {
-       content: "";
-       position: absolute;
-      top: 0;
-      left: 0;
-      display: block;
-      width: 100%;
+      }
+    img {
       height: 100%;
-      border-radius: 15px;
-      background: rgba(black, 0.6);
-      z-index: 2;
-      transition: 0.5s;
-      opacity: 0;
-      }
-      }  
-      img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-radius: 15px;
-      }
-      .cardtext {
-        position: relative;
-        z-index: 3;
-        color: white;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: 0.5s;
-        h1 {
-          margin: 0px
-        }
-        p {
-          letter-spacing: 1px;
-          font-size: 15px;
-          margin-top: 8px;
-        }
-        button {
-          padding: 0.6rem;
-          outline: none;
-          border: none;
-          border-radius: 3px;
-          background: white;
-          color: black;
-          font-weight: bold;
-          cursor: pointer;
-          transition: 0.4s ease;
-          &:hover {
-          background: dodgerblue;
-          color: white;
-          }
-        }
-      }
-  
+      width: auto;
+      object-fit: contain;
+    }
 
-      
-    }
-    .projecttext{
-      display: flex;
-      flex-direction:column;
-      justify-content: center;
-      padding: 3vh;
-    }
   }
+
+}
+
+.vertically-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
