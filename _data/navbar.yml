@@ -1,10 +1,10 @@
-- name: Home
-  link: /
+# - name: Home
+#   link: /
 - name: About me
-  link: /about/
+  link: /#about
 - name: My projects
   link: /#host.it
-- name: My Tech CV
-  link: /techcv/
+- name: My (impressive) coding skills
+  link: /#cv
 # - name: My CV before I started to code
 #   link: /experiences/
