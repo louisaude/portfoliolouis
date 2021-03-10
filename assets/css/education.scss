@@ -1,0 +1,24 @@
+.educationtitle {
+  border: solid black 2px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+
+  .educationcontainer {
+    border: solid blue 2px;
+    display: flex;
+    flex-direction: row;
+
+    .educationcolumn {
+      display: flex;
+      flex-direction: column;
+
+      .educationbox {
+        display: flex;
+        flex-direction: row;
+        }
+      }
+    }
+}
