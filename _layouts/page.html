@@ -37,17 +37,40 @@ layout: meta
     document.body.classList.remove("dark-mode");
     }
   }
-  const gra = function(min, max) {
-    return Math.random() * (max - min) + min;
+  // const gra = function(min, max) {
+  //   return Math.random() * (max - min) + min;
+// }
+// const init = function(){
+//   let items = document.querySelectorAll('section');
+//   // for (let i = 0; i < items.length; i++){
+//   //   items[i].style.background = randomColor({luminosity: 'light'});
+//   }
+//   // cssScrollSnapPolyfill()
+// // }
+// init();
+
+let lastKnownScrollPosition = 0;
+let ticking = false;
+
+function doSomething(scrollPos) {
+  const deviceHeight = window.innerHeight
+  console.log(scrollPos);
+  console.log(innerHeight);
 }
-const init = function(){
-  let items = document.querySelectorAll('section');
-  for (let i = 0; i < items.length; i++){
-    items[i].style.background = randomColor({luminosity: 'light'});
+
+document.addEventListener('scroll', function(e) {
+  lastKnownScrollPosition = window.scrollY;
+
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      doSomething(lastKnownScrollPosition);
+      ticking = false;
+    });
+
+    ticking = true;
   }
-  cssScrollSnapPolyfill()
-}
-init();
+});
+
   </script>
   </body>
   

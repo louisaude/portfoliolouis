@@ -24,8 +24,18 @@
   &:hover {
     background: rgba($black, 1);
     color: $white;
-    text-decoration: none;
+    // text-decoration: none;
  }
+}
+
+#scrolled-light {
+    background: rgba($black, 1);
+    color: $white;
+}
+
+#scrolled-dark {
+  background: rgba(white, 1);
+  color: $black;
 }
 .dark-mode {
   .button-navbar {

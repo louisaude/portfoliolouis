@@ -1,7 +1,7 @@
 <nav>
   <div id="navbarid" class="container navbar-container"> 
     {% for item in site.data.navbar %}
-    <a class="button-navbar" href="{{item.link}}">{{item.name}}</a>
+    <a class="button-navbar {{item.name}}" href="{{item.link}}">{{item.name}} </a>
   {% endfor %}
     <label class="switch">
       <input type="checkbox" id="dmcheckbox" onclick="myFunction()">
