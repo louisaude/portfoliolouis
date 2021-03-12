@@ -52,10 +52,37 @@ layout: meta
 let lastKnownScrollPosition = 0;
 let ticking = false;
 
-function doSomething(scrollPos) {
+const navel = document.getElementById('navbarid');
+let navbuttons = navel.querySelectorAll('a');
+
+function highlightNav(scrollPos) {
   const deviceHeight = window.innerHeight
   console.log(scrollPos);
-  console.log(innerHeight);
+  console.log(deviceHeight);
+      if ( scrollPos <= deviceHeight) {
+      navbuttons[0].classList.add('scrolled')
+      navbuttons[1].classList.remove('scrolled')
+      navbuttons[2].classList.remove('scrolled')
+      navbuttons[3].classList.remove('scrolled')
+      } 
+      else if (scrollPos <= deviceHeight * 2) {     
+      navbuttons[0].classList.remove('scrolled')
+      navbuttons[1].classList.add('scrolled')
+      navbuttons[2].classList.remove('scrolled')
+      navbuttons[3].classList.remove('scrolled')
+      }
+      else if (scrollPos <= deviceHeight * 3) {     
+      navbuttons[0].classList.remove('scrolled')
+      navbuttons[1].classList.remove('scrolled')
+      navbuttons[2].classList.add('scrolled')
+      navbuttons[3].classList.remove('scrolled')
+      }
+      else if (scrollPos <= deviceHeight * 4) {     
+      navbuttons[0].classList.remove('scrolled')
+      navbuttons[1].classList.remove('scrolled')
+      navbuttons[2].classList.remove('scrolled')
+      navbuttons[3].classList.add('scrolled')
+      }   
 }
 
 document.addEventListener('scroll', function(e) {
@@ -63,13 +90,15 @@ document.addEventListener('scroll', function(e) {
 
   if (!ticking) {
     window.requestAnimationFrame(function() {
-      doSomething(lastKnownScrollPosition);
+      highlightNav(lastKnownScrollPosition);
       ticking = false;
     });
 
     ticking = true;
   }
 });
+
+
 
   </script>
   </body>

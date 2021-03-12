@@ -7,6 +7,10 @@ body {
   #navbarid {
     opacity: 1;
     background-color: rgb(244, 242, 247);
+    .scrolled {
+      background: rgba(18,18,18, 1);
+      color:  rgb(244, 242, 247);
+    }
   }
 
   h1{
@@ -21,12 +25,17 @@ body {
   }
 }
 .dark-mode {
-  background-color:#121212;
-  color: white;
+  background-color:rgb(18,18,18);
+  color:  rgb(244, 242, 247);
   box-shadow: #000 ;
   #navbarid {
     opacity: 1;
-    background-color: #121212;
+    background-color: rgb(18,18,18);
+
+    .scrolled {
+      background:rgba(244, 242, 247, 1);
+      color: rgb(18,18,18);
+    }
   }
 }
 
