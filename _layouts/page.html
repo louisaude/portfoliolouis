@@ -5,7 +5,10 @@ layout: meta
 {% include navbar.html %}
   {{ content }}
   <script>
-    (function () {
+
+//#region Dark mode scripts
+
+    (function () {  // checks dm status on pageload
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && sessionStorage.getItem('darkmode') === null ) {
       document.body.classList.add("dark-mode");
       document.getElementById("dmcheckbox").checked = false;
@@ -25,8 +28,7 @@ layout: meta
       document.getElementById("dmcheckbox").checked = true;
        }
     })();
-    function myFunction() {
-    console.log(sessionStorage.getItem('darkmode'))
+    function darkModeChecker() { //switches to dm/lm 
     if (sessionStorage.getItem('darkmode') === 'false') {
     sessionStorage.setItem('darkmode','true');
     document.body.classList.add("dark-mode");
@@ -37,29 +39,15 @@ layout: meta
     document.body.classList.remove("dark-mode");
     }
   }
-  // const gra = function(min, max) {
-  //   return Math.random() * (max - min) + min;
-// }
-// const init = function(){
-//   let items = document.querySelectorAll('section');
-//   // for (let i = 0; i < items.length; i++){
-//   //   items[i].style.background = randomColor({luminosity: 'light'});
-//   }
-//   // cssScrollSnapPolyfill()
-// // }
-// init();
+//#endregion
 
-let lastKnownScrollPosition = 0;
-let ticking = false;
-
+// #region Navbar highlighting scripts
 const navel = document.getElementById('navbarid');
 let navbuttons = navel.querySelectorAll('a');
 
-function highlightNav(scrollPos) {
-  const deviceHeight = window.innerHeight
-  console.log(scrollPos);
-  console.log(deviceHeight);
-      if ( scrollPos <= deviceHeight) {
+function checkPosition(scrollPos) { //compares scroll position with page position
+  let deviceHeight = window.innerHeight
+  if ( scrollPos <= deviceHeight) {
       navbuttons[0].classList.add('scrolled')
       navbuttons[1].classList.remove('scrolled')
       navbuttons[2].classList.remove('scrolled')
@@ -85,6 +73,20 @@ function highlightNav(scrollPos) {
       }   
 }
 
+(function () { //highlights relevant tab on page load
+  let deviceHeight = window.innerHeight
+  let scrollStart = window.scrollY;
+  checkPosition(scrollStart);
+})();
+
+let lastKnownScrollPosition = 0;
+let ticking = false;
+
+function highlightNav(scrollPos) { //highlights relevant tab on scroll
+  let deviceHeight = window.innerHeight
+  checkPosition(scrollPos);
+}
+
 document.addEventListener('scroll', function(e) {
   lastKnownScrollPosition = window.scrollY;
 
@@ -98,7 +100,7 @@ document.addEventListener('scroll', function(e) {
   }
 });
 
-
+//#endregion
 
   </script>
   </body>
