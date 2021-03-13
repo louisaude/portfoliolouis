@@ -8,7 +8,7 @@ body {
     opacity: 1;
     background-color: rgb(244, 242, 247);
     .scrolled {
-      background: rgba(18,18,18, 1);
+      background-color: rgba(18,18,18, 1);
       color:  rgb(244, 242, 247);
     }
   }
@@ -33,7 +33,7 @@ body {
     background-color: rgb(18,18,18);
 
     .scrolled {
-      background:rgba(244, 242, 247, 1);
+      background-color:rgba(244, 242, 247, 1);
       color: rgb(18,18,18);
     }
   }
@@ -50,4 +50,5 @@ body {
 
 // * {
 //   border: black solid 3px;
+
 // }
