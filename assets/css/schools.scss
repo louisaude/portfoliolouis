@@ -1,0 +1,19 @@
+.schoolsrow {
+display: flex;
+height:100vh;
+  .schoolscolumn {
+  width: 50%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  padding:2em;
+    .schoolbox {
+      display: flex;
+      flex-direction: column;
+      img {
+        height: 2em;
+        padding-right: 0.3em;
+      }
+    }
+  }
+}

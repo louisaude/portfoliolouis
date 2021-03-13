@@ -3,6 +3,14 @@
     {% for item in site.data.navbar %}
     <a class="button-navbar {{item.name}}" href="{{item.link}}">{{item.name}} </a>
   {% endfor %}
+  <div class="dropdown">
+    <button class="dropbtn">Dropdown</button>
+    <div class="dropdown-content">
+      <a href="#">My Github</a>
+      <a href="#">MyCV</a>
+      <a href="#">My linkedin</a>
+    </div>
+  </div>
     <label class="switch">
       <input type="checkbox" id="dmcheckbox" onclick="darkModeChecker()">
       <span class="slider"></span>
