@@ -32,6 +32,21 @@
       color: $black;
    }
   }
+  .dropdown {
+  .dropdown-content{
+    a {
+      color: white;
+      &:hover {
+        color: black;
+        background-color: white;
+      }
+    }
+  }
+}
+
+  .dropdown:hover .dropbtn {background: rgba($white, 1);
+      color: $black;
+  }
 }
 
 .dropdown {
@@ -64,8 +79,3 @@
 
 
 .dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: rgba(18,18,18,1);
-  color:  rgba(244, 242, 247, 1);
-}
-
