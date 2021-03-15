@@ -22,13 +22,24 @@ body {
   a{
   text-align: start;
   justify-content: start;
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    color: inherit;
+    cursor: default;
+  }
   }
 }
 .dark-mode {
   background-color:rgb(18,18,18);
-  // background-color: rosybrown;
   color:  rgb(244, 242, 247);
   box-shadow: #000 ;
+  a {
+    color: black;
+    &:hover {
+      color: black;
+    }
+  }
   #navbarid {
     opacity: 1;
     background-color: rgb(18,18,18);

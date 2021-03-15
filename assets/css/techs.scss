@@ -1,0 +1,15 @@
+.techs {
+    // border: black solid 3px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h1, h4, p {
+    text-align: center;
+  }
+  .icon {
+    height: 1.5em;
+    width: auto;
+    margin: 0.5em;
+  }
+}

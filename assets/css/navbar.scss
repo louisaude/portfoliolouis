@@ -36,6 +36,8 @@
   .dropdown-content{
     a {
       color: white;
+      background-color: rgba(18,18,18, 1);
+
       &:hover {
         color: black;
         background-color: white;
@@ -62,6 +64,7 @@
     min-width: fit-content;
     z-index: 1;
     a {
+      background-color: rgb(244, 242, 247);
       color: black;
       padding: .5em;
       text-decoration: none;
