@@ -1,6 +1,12 @@
+.schools {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .schoolsrow {
 display: flex;
-height:100vh;
   .schoolscolumn {
   width: 50%;
   display:flex;
@@ -11,7 +17,7 @@ height:100vh;
       display: flex;
       flex-direction: column;
       img {
-        height: 2em;
+        height: 1em;
         padding-right: 0.3em;
       }
     }

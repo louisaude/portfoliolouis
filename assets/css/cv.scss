@@ -7,5 +7,15 @@
     min-width: 800px;
     height: 100%;
   }
-  
+  a {
+    padding: 2em;
+  }
+
+}
+
+.dark-mode {
+  .cv-pdf {
+    background-color:rgba(18,18,18,1);
+    a { color: white;}
+  }
 }
