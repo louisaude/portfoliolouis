@@ -1,18 +1,22 @@
 <nav>
-  <div id="navbarid" class="container navbar-container"> 
+  <div id="navbarid" class="container navbar-container">
     {% for item in site.data.navbar %}
-    <a class="button-navbar {{item.name}}" href="{{item.link}}">{{item.name}} </a>
-  {% endfor %}
-  <div class="dropdown">
-    <button class="dropbtn">My links</button>
-    <div class="dropdown-content">
-      <a href="#">Github</a>
-      <a href="#">CV</a>
-      <a href="#">Linkedin</a>
+    <a class="button-navbar {{item.name}}" href="{{item.link}}"
+      >{{item.name}}
+    </a>
+    {% endfor %}
+    <div class="dropdown">
+      <button class="dropbtn">My links</button>
+      <div class="dropdown-content">
+        <a href="https://github.com/" target="_blank">Github</a>
+        <a href="/#cv">CV</a>
+        <a href="https://www.linkedin.com/in/louis-aude/" target="_blank"
+          >Linkedin</a
+        >
+      </div>
     </div>
-  </div>
     <label class="switch">
-      <input type="checkbox" id="dmcheckbox" onclick="darkModeChecker()">
+      <input type="checkbox" id="dmcheckbox" onclick="darkModeChecker()" />
       <span class="slider"></span>
     </label>
   </div>

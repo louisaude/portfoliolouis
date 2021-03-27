@@ -14,8 +14,15 @@
   height: 100vh;
   align-items: center;
 
-  .projectpic {
+  a {
     margin: 4vh;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  .projectpic {
+    // margin: 4vh;
     width: 40vh;
     height: 40vh;
     transition: 0.4s ease-out;

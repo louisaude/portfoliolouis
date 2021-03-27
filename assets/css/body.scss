@@ -1,5 +1,5 @@
 body {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
   font-weight: 200;
   text-align: justify;
   text-justify: inter-word;
@@ -8,46 +8,49 @@ body {
     opacity: 1;
     background-color: rgb(244, 242, 247);
     .scrolled {
-      background-color: rgba(18,18,18, 1);
-      color:  rgb(244, 242, 247);
+      background-color: rgba(18, 18, 18, 1);
+      color: rgb(244, 242, 247);
     }
   }
 
-  h1{
+  h1 {
     font-weight: 600;
     text-align: center;
   }
-  p{
-  text-align: justify;
+  p {
+    text-align: justify;
   }
-  a{
-  text-align: start;
-  justify-content: start;
-  text-decoration: none;
-  color: inherit;
-  &:hover {
+  a {
+    text-align: start;
+    justify-content: start;
+    text-decoration: underline;
     color: inherit;
-    cursor: default;
-  }
+    &:hover {
+      background-color: rgba(18, 18, 18, 1);
+      color: rgb(244, 242, 247);
+      text-decoration: none;
+    }
   }
 }
 .dark-mode {
-  background-color:rgb(18,18,18);
-  color:  rgb(244, 242, 247);
-  box-shadow: #000 ;
+  background-color: rgb(18, 18, 18);
+  color: rgb(244, 242, 247);
+  box-shadow: #000;
   a {
-    color: black;
+    color: rgba(244, 242, 247, 1);
     &:hover {
-      color: black;
+      background-color: rgb(244, 242, 247);
+      color: rgb(18, 18, 18);
+      text-decoration: none;
     }
   }
   #navbarid {
     opacity: 1;
-    background-color: rgb(18,18,18);
+    background-color: rgb(18, 18, 18);
 
     .scrolled {
-      background-color:rgba(244, 242, 247, 1);
-      color: rgb(18,18,18);
+      background-color: rgba(244, 242, 247, 1);
+      color: rgb(18, 18, 18);
     }
   }
 }
@@ -55,7 +58,6 @@ body {
 // #task {
 //   background-image: url("../UnderConstruction.png");
 // }
-
 
 // .slide-content .scroller {
 //   width: 1024px;
