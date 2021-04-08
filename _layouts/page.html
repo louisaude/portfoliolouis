@@ -1,107 +1,109 @@
 ---
 layout: meta
 ---
+
 <body>
-{% include navbar.html %}
-  {{ content }}
+  {% include navbar.html %} {{ content }}
   <script>
+    //#region Dark mode scripts
 
-//#region Dark mode scripts
-
-    (function () {  // checks dm status on pageload
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && sessionStorage.getItem('darkmode') === null ) {
-      document.body.classList.add("dark-mode");
-      document.getElementById("dmcheckbox").checked = false;
-      sessionStorage.setItem('darkmode','true')
+    (function darkMode() {
+      // checks dm status on pageload
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches &&
+        sessionStorage.getItem("darkmode") === null
+      ) {
+        document.body.classList.add("dark-mode");
+        document.getElementById("dmcheckbox").checked = false;
+        sessionStorage.setItem("darkmode", "true");
+      } else if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: light)").matches &&
+        sessionStorage.getItem("darkmode") === null
+      ) {
+        document.body.classList.remove("dark-mode");
+        document.getElementById("dmcheckbox").checked = true;
+        sessionStorage.setItem("darkmode", "false");
+      } else if (sessionStorage.getItem("darkmode") === "true") {
+        document.body.classList.add("dark-mode");
+        document.getElementById("dmcheckbox").checked = false;
+      } else if (sessionStorage.getItem("darkmode") === "false") {
+        document.body.classList.remove("dark-mode");
+        document.getElementById("dmcheckbox").checked = true;
       }
-      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches && sessionStorage.getItem('darkmode') === null ) {
-      document.body.classList.remove("dark-mode");
-      document.getElementById("dmcheckbox").checked = true;
-      sessionStorage.setItem('darkmode','false')
-      }
-      else if (sessionStorage.getItem('darkmode') === 'true'){
-      document.body.classList.add("dark-mode");
-      document.getElementById("dmcheckbox").checked = false;
-      }
-      else if (sessionStorage.getItem('darkmode') === 'false') {
-      document.body.classList.remove("dark-mode");
-      document.getElementById("dmcheckbox").checked = true;
-       }
     })();
-    function darkModeChecker() { //switches to dm/lm 
-    if (sessionStorage.getItem('darkmode') === 'false') {
-    sessionStorage.setItem('darkmode','true');
-    document.body.classList.add("dark-mode");
-  
-    }
-    else {
-    sessionStorage.setItem('darkmode','false');
-    document.body.classList.remove("dark-mode");
-    }
-  }
-//#endregion
-
-// #region Navbar highlighting scripts
-const navel = document.getElementById('navbarid');
-let navbuttons = navel.querySelectorAll('a');
-
-function checkPosition(scrollPos) { //compares scroll position with page position
-  let deviceHeight = window.innerHeight
-  if ( scrollPos <= deviceHeight) {
-      navbuttons[0].classList.add('scrolled')
-      navbuttons[1].classList.remove('scrolled')
-      navbuttons[2].classList.remove('scrolled')
-      navbuttons[3].classList.remove('scrolled')
-      } 
-      else if (scrollPos <= deviceHeight * 2) {     
-      navbuttons[0].classList.remove('scrolled')
-      navbuttons[1].classList.add('scrolled')
-      navbuttons[2].classList.remove('scrolled')
-      navbuttons[3].classList.remove('scrolled')
+    function darkModeChecker() {
+      //switches to dm/lm
+      if (sessionStorage.getItem("darkmode") === "false") {
+        sessionStorage.setItem("darkmode", "true");
+        document.body.classList.add("dark-mode");
+      } else {
+        sessionStorage.setItem("darkmode", "false");
+        document.body.classList.remove("dark-mode");
       }
-      else if (scrollPos <= deviceHeight * 3) {     
-      navbuttons[0].classList.remove('scrolled')
-      navbuttons[1].classList.remove('scrolled')
-      navbuttons[2].classList.add('scrolled')
-      navbuttons[3].classList.remove('scrolled')
+    }
+    //#endregion
+
+    // #region Navbar highlighting scripts
+    const navel = document.getElementById("navbarid");
+    let navbuttons = navel.querySelectorAll("a");
+
+    function checkPosition(scrollPos) {
+      //compares scroll position with page position
+      let deviceHeight = window.innerHeight;
+      if (scrollPos <= deviceHeight * 2) {
+        navbuttons[0].classList.add("scrolled");
+        navbuttons[1].classList.remove("scrolled");
+        navbuttons[2].classList.remove("scrolled");
+        navbuttons[3].classList.remove("scrolled");
+      } else if (scrollPos <= deviceHeight * 4) {
+        navbuttons[0].classList.remove("scrolled");
+        navbuttons[1].classList.add("scrolled");
+        navbuttons[2].classList.remove("scrolled");
+        navbuttons[3].classList.remove("scrolled");
+      } else if (scrollPos <= deviceHeight * 8) {
+        navbuttons[0].classList.remove("scrolled");
+        navbuttons[1].classList.remove("scrolled");
+        navbuttons[2].classList.add("scrolled");
+        navbuttons[3].classList.remove("scrolled");
+      } else {
+        navbuttons[0].classList.remove("scrolled");
+        navbuttons[1].classList.remove("scrolled");
+        navbuttons[2].classList.remove("scrolled");
+        navbuttons[3].classList.add("scrolled");
       }
-      else if (scrollPos <= deviceHeight * 4) {     
-      navbuttons[0].classList.remove('scrolled')
-      navbuttons[1].classList.remove('scrolled')
-      navbuttons[2].classList.remove('scrolled')
-      navbuttons[3].classList.add('scrolled')
-      }   
-}
+    }
 
-(function () { //highlights relevant tab on page load
-  let deviceHeight = window.innerHeight
-  let scrollStart = window.scrollY;
-  checkPosition(scrollStart);
-})();
+    (function () {
+      //highlights relevant tab on page load
+      let deviceHeight = window.innerHeight;
+      let scrollStart = window.scrollY;
+      checkPosition(scrollStart);
+    })();
 
-let lastKnownScrollPosition = 0;
-let ticking = false;
+    let lastKnownScrollPosition = 0;
+    let ticking = false;
 
-function highlightNav(scrollPos) { //highlights relevant tab on scroll
-  let deviceHeight = window.innerHeight
-  checkPosition(scrollPos);
-}
+    function highlightNav(scrollPos) {
+      //highlights relevant tab on scroll
+      let deviceHeight = window.innerHeight;
+      checkPosition(scrollPos);
+    }
 
-document.addEventListener('scroll', function(e) {
-  lastKnownScrollPosition = window.scrollY;
+    document.addEventListener("scroll", function (e) {
+      lastKnownScrollPosition = window.scrollY;
 
-  if (!ticking) {
-    window.requestAnimationFrame(function() {
-      highlightNav(lastKnownScrollPosition);
-      ticking = false;
+      if (!ticking) {
+        window.requestAnimationFrame(function () {
+          highlightNav(lastKnownScrollPosition);
+          ticking = false;
+        });
+
+        ticking = true;
+      }
     });
 
-    ticking = true;
-  }
-});
-
-//#endregion
-
+    //#endregion
   </script>
-  </body>
-  
+</body>
